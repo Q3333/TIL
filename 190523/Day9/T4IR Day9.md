@@ -1,36 +1,37 @@
 # T4IR 9일차 #
 
-## Hero 연습 - interface, abstract, extends
+## Animal 연습 - interface, abstract, extends
 
-- ## `SuperMan.java`
+- ## `Cat.java`
 
 ```java
-package erercise.overall.hero;
+package exercise.animal;
 
-public class SuperMan extends Hero {
+public class Cat extends animal {
 	void action() {
-		this.fly();
-		this.swim();
-		this.fight();
+		this.hunt();
+		this.eat();
+		this.sleep();
 	}
 	public String toString() {
-		return ("슈퍼맨");
+		return ("고양이");
 	}
 }
 ```
 
-- ## `Batman.java`
+- ## `Bird.java`
 
 ```java
-package erercise.overall.hero;
+package exercise.animal;
 
-public class BatMan extends Hero {
+public class Bird extends animal {
 	public void action() {
-		this.swim();
-		this.fight();
+		this.hunt();
+		this.eat();
+		this.sleep();
 	}
 	public String toString() {
-		return ("배트맨");
+		return ("새");
 	}
 	
 	
@@ -38,103 +39,101 @@ public class BatMan extends Hero {
 
 ```
 
-- ## `SpiderMan.java`
+- ## `Dog.java`
 
 ```java
-package erercise.overall.hero;
+package exercise.animal;
 
-public class SpiderMan extends Hero {
+public class Dog extends animal {
 	void action() {
-		this.fight();
+		this.hunt();
+		this.eat();
+		this.sleep();
 	}
 	public String toString() {
-		return ("스파이더맨");
+		return ("강아지");
 	}
 }
 ```
 
 
 
-- ## `CanFight.java`
+- ## `Hunt.java`
 
 ``` 
-package erercise.overall.hero;
+package exercise.animal;
 
-public interface CanFight {
-	public void fight();
+public interface Hunt{
+	public void hunt();
 }
 
 ```
 
-- ## `CanFly.java`
+- ## `Eat.java`
 
 ```
-package erercise.overall.hero;
+package exercise.animal;
 
-public interface CanFly {
+public interface Eat {
 	public void fly();
 }
 
 ```
 
-- ## `CanSwim.java`
+- ## `Sleep.java`
 
 ```
-package erercise.overall.hero;
+package exercise.animal;
 
-public interface CanSwim {
-	public void swim();
+public interface Sleep {
+	public void sleep();
 }
 
 ```
 
-- ## `Hero.java`
+- ## `Animal.java`
 
 ```
-package erercise.overall.hero;
+package exercise.animal;
 
-public abstract class Hero implements CanFly, CanSwim, CanFight {
-	public void fly() {
-		System.out.println(this.toString()+"이 난다.");
+public abstract class Animal implements Eat, Hunt, Sleep {
+	public void eat() {
+		System.out.println(this.toString()+"이 먹는다.");
 	}
-	public void fight() {
-		System.out.println(this.toString()+"이 헤엄친다");
+	public void hunt() {
+		System.out.println(this.toString()+"이 사냥한다.");
 	}
-	public void swim() {
-		System.out.println(this.toString()+"이 싸운다.");
+	public void sleep() {
+		System.out.println(this.toString()+"이 잔다.");
 	}
 	abstract void action();
 }
 ```
 
-- ## `HeroTest.java`
+- ## `AnimalTest.java`
 
 ```
-package erercise.overall.hero;
+package exercise.animal;
 
 import java.util.Arrays;
 
-public class HeroTest {
+public class AnimalTest {
 
 	public static void main(String[] args) {
-		Hero[] heros = new Hero[] {
-				new SuperMan(),
-				new BatMan(),
-				new SpiderMan() };
+		Animal[] aimals = new Animal[] {
+				new Cat(),
+				new Dog(),
+				new Bird() };
 	
-		System.out.print("Hero 목록 : ");
-		System.out.println(Arrays.toString(heros));
+		System.out.print("Animal 목록 : ");
+		System.out.println(Arrays.toString(animals));
 		
-		for(Hero num : heros) {
+		for(Animal num : animals) {
 			num.action();
 		}
 	}	// main end
 } // class end
 ```
-
-
-
-
 
 Interface와 abstract, extends 의 개념을 익히는 예제 
 
