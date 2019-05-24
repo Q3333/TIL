@@ -137,9 +137,7 @@ public class AnimalTest {
 
 
 
-![](https://github.com/Q3333/ITL/blob/master/190523/Day9/result1.png)
-
-
+![](C:\Users\student\TIL\190523\Day9\result1.png)
 
 
 
