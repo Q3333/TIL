@@ -7,7 +7,7 @@
 ```java
 package exercise.animal;
 
-public class Cat extends animal {
+public class Cat extends Animal {
 	void action() {
 		this.hunt();
 		this.eat();
@@ -24,7 +24,7 @@ public class Cat extends animal {
 ```java
 package exercise.animal;
 
-public class Bird extends animal {
+public class Bird extends Animal {
 	public void action() {
 		this.hunt();
 		this.eat();
@@ -44,7 +44,7 @@ public class Bird extends animal {
 ```java
 package exercise.animal;
 
-public class Dog extends animal {
+public class Dog extends Animal {
 	void action() {
 		this.hunt();
 		this.eat();
@@ -75,7 +75,7 @@ public interface Hunt{
 package exercise.animal;
 
 public interface Eat {
-	public void fly();
+	public void eat();
 }
 
 ```
@@ -98,16 +98,17 @@ package exercise.animal;
 
 public abstract class Animal implements Eat, Hunt, Sleep {
 	public void eat() {
-		System.out.println(this.toString()+"이 먹는다.");
+		System.out.println(this.toString()+"가 먹는다.");
 	}
 	public void hunt() {
-		System.out.println(this.toString()+"이 사냥한다.");
+		System.out.println(this.toString()+"가 사냥한다.");
 	}
 	public void sleep() {
-		System.out.println(this.toString()+"이 잔다.");
+		System.out.println(this.toString()+"가 잔다.");
 	}
 	abstract void action();
 }
+
 ```
 
 - ## `AnimalTest.java`
@@ -120,7 +121,7 @@ import java.util.Arrays;
 public class AnimalTest {
 
 	public static void main(String[] args) {
-		Animal[] aimals = new Animal[] {
+		Animal[] animals = new Animal[] {
 				new Cat(),
 				new Dog(),
 				new Bird() };
