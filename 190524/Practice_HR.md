@@ -129,3 +129,7 @@ public class HrTest {
 
 
 
+출력 화면 
+
+![](https://github.com/Q3333/ITL/blob/master/190524/result2.png)
+
