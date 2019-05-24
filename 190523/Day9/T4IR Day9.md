@@ -132,7 +132,7 @@ public class HeroTest {
 } // class end
 ```
 
-![](C:\Users\student\TIL\190523\Day9\출력1.png)
+![](C:\Users\student\TIL\190523\Day9\result1.png)
 
 
 
