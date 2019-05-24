@@ -135,5 +135,17 @@ public class AnimalTest {
 } // class end
 ```
 
+![](C:\Users\student\TIL\190523\Day9\result1.png)
+
+
+
+
+
+![](https://github.com/Q3333/ITL/blob/master/190523/Day9/result1.png)
+
+
+
+
+
 Interface와 abstract, extends 의 개념을 익히는 예제 
 
