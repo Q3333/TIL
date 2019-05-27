@@ -61,3 +61,10 @@ git add (file add in the managing list) -option
 git commit (sava and snapshot)
 
 git push
+
+
+
+
+
+살짝 수정해보기
+
