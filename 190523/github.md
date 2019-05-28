@@ -1,70 +1,73 @@
 # Github 특강
 
-## 1. 마크다운 학습하기
+Github으로 취업하기
+
+
+
+## 1.마크다운 기초
 
 각종 마크다운 문법
 
-- /# 을쓰면 대제목
 
-- /##을 쓰면 중제목
 
-- `으로 둘러싸면 회색 밑줄이 쳐진다. 
-  - 예시 `#`
-- tap 과 shift tap 으로 앞여백 조정
+- `#`은 대제목
+- `##`은 중제목
+- `-`은 동그라미
+- `###`은 소제목
+- `은 중요 단어 형광펜
+  - 탭누르면 이렇게 빠짐
+- 쉬프트 탭 누르면 다시 돌아감
+
+
 
 
 
 ## 2. 마크다운 문법
 
-- 기울임  : *을 양쪽에 감싸기
-  
-- *안녕*
-  
-- 볼드체 : **을 양쪽에 감싸기
-  
-- **안녕**
-  
-- 블록 쿼트
 
-  - > 인용문 쓸 때!
 
-## 3. 코드 블락
+**코드하고 반대편에도 
 
-- 코드블락을 쓸 때는 ```을 활용한다.
+**하면 강조함.
 
-  - ```
-    public class HelloWorld {
-    	public static void main(String args[]) {
-    		System.out.println("hello world")
-    	}
+***세번 사이에 넣으면 볼드 + 옆으로 늬움
+
+
+
+1.강조 : **이게강조된구문** -> **
+
+2.기울임 : *이게 기울여진 구문* -> *
+
+3.강조+기울임 : ***이게 강조+기울임***  -> ***
+
+
+
+> 와 이거는 인용문을 쓸 떄 쓰면 되겠네 -> 
+>
+> 출력 방법 : >
+
+
+
+## 3. 코드블락 ##
+
+코드블락을 쓸 때는 **```**을***활용***한다. (코드 타이핑이 이뻐짐)
+
+```java
+public class HelloWord{
+    public static void main()(String[] args){
+    	System.out.println("hello world");
     }
-    ```
+}
+```
 
-    ```python
-    class Person :
-    	def __init__ :
-            
-    ```
-
-    
-
-
-
-## github
-
-git init (directory clone)
-
-git status (get status)
-
-git add (file add in the managing list) -option
-
-git commit (sava and snapshot)
-
-git push
+```python
+class Person:
+    def __init(self, name):
+        self.name = name
+        
+    def __str__(self):
+        print(self.name)
+```
 
 
-
-
-
-살짝 수정해보기
 
