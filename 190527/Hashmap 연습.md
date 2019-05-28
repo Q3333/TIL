@@ -21,7 +21,7 @@ HashMap<Integer, String> Test1;
 
 <출력화면>
 
-![](C:\Users\student\TIL\190527\result_190528.PNG)
+![](<https://github.com/Q3333/ITL/blob/master/190527/result_190528.PNG>)
 
 
 
@@ -62,9 +62,9 @@ int no = 1;
 
 
 
-출력 형태 :
+<출력화면>
 
 
 
- ![](C:\Users\student\TIL\190527\result2_190528.PNG)
+ ![](<https://github.com/Q3333/ITL/blob/master/190527/result2_190528.PNG>)
 
