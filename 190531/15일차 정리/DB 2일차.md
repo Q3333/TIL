@@ -390,6 +390,75 @@ desc emp;
 
 
 
+## Join ~ on
+
+기존 where 절에 있는 조인 조건식을 on 키워드 옆에 작성.
+
+
+
+ex) 
+
+```
+select a.empno, a.ename, a.deptno, b.dname
+from emp a left outer join dept b on a.deptno = b.deptno;
+```
+
+
+
+
+
+
+
+## left, right, full outher join
+
+ 
+
+left : 왼쪽에 널값
+
+```
+select b.deptno, b.dname, a.empno, a.ename 
+from emp a left outer join dept b on a.deptno  = b.deptno
+order by  b.deptno; 
+```
+
+
+
+<출력화면>
+
+![](<https://github.com/Q3333/ITL/blob/master/190531/pic/1.PNG>)
+
+
+
+right : 오른쪽에 널값
+
+```
+select b.deptno, b.dname, a.empno, a.ename 
+from emp a right outer join dept b on a.deptno  = b.deptno
+order by  b.deptno; 
+```
+
+
+
+<출력화면>
+
+![](<https://github.com/Q3333/ITL/blob/master/190531/pic/2.PNG>)
+
+
+
+full : 양쪽에 널값 
+
+```
+select b.deptno, b.dname, a.empno, a.ename
+from emp a full outer join dept b on a.deptno  = b.deptno
+order by  b.deptno; 
+```
+
+
+
+<출력화면>
+
+![](<https://github.com/Q3333/ITL/blob/master/190531/pic/3.PNG>)
+
 
 
 ### ※ n개의 테이블을 조인할때 최소 조인 조건은  n-1개 
