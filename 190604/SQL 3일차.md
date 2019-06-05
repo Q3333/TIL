@@ -134,7 +134,7 @@ select의 결과 집합 = Result set = cursor
 
 주로 괄호를 치고 쓴다. (where에 가장 많이 오고 select , from, having, order 절등에도 서브쿼리가 올 수 있다.)
 
-- Main보다 Subquery쪽이 먼저 실행이 된다.
+- **Main보다 Subquery쪽이 먼저 실행이 된다.**
 
 
 
@@ -177,10 +177,10 @@ subquery 는 mainquery의  select절, from절, where절, having절, order by절 
 
 where절과 having절의 subquery는 연산자 오른쪽에 () 안에 정의합니다.
 
-단일 행을 리턴하는 subquery : single row subquery
-복수행을 리턴하는 subquery : multiple row subquery
-단일 행, 단일 컬럼값을 리턴 subquery : scalar subquery
-두개 이상의 컬럼값을 리턴하는 subquery : multiple column subquery
+단일 행을 리턴하는 subquery : **single row subquery**
+복수행을 리턴하는 subquery : **multiple row subquery**
+단일 행, 단일 컬럼값을 리턴 subquery : **scalar subquery**
+두개 이상의 컬럼값을 리턴하는 subquery : **multiple column subquery**
 
 where절에 single row subquery 를 사용할 경우 반드시 single row operator(>, >=, <=, <, =, <>)와 함께 사용합니다.
 where절에 multiple row subquery를 사용할 경우 반드시 multiple row operator(In, any, all)와 함께 사용합니다.
@@ -271,10 +271,12 @@ group by deptno);
 # Co-related Subquery
 
 - 메인쿼리의 값을 서브쿼리 실행할때 사용하는 쿼리
-
 - 메인 쿼리의 한 ROW에 대해서 서브쿼리가 한번씩 실행 (이중 for 문 처럼)
+- 상관관계 subquery  라고도 한다.
 
 -> co-related subquery 상관관계는, 조인으로 해결하는게 더 나음.
+
+
 
 
 
