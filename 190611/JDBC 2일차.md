@@ -177,3 +177,144 @@ public void dbCloase(Connection con, Statement stat, ResultSet rs) {
 		}
 	}
 ```
+
+
+
+3. Insert
+
+```sql
+	public int insertBook(Book newBook) {
+		int rows = 0;
+		Connection con = null;
+		PreparedStatement stat = null;
+		
+		String novel = "insert into book (ibsn, title, author, price) values (?,?,?,?)";
+		String magazine = "insert into book (ibsn,title,price,category,descript) 				values(?,?,?,?,?)";
+		
+		try {
+			con = dbCon();
+			if(newBook.getIsbn().startsWith("N")) {
+				stat = con.prepareStatement(novel);
+				stat.setString(1, newBook.getIsbn());
+				stat.setString(2, newBook.getTitle());
+				stat.setString(3, newBook.getAuthor());
+				stat.setInt(4, newBook.getPrice());
+				
+			}else {
+				stat = con.prepareStatement(magazine);
+				stat.setString(1, newBook.getIsbn());
+				stat.setString(2, newBook.getTitle());
+				stat.setInt(3, newBook.getPrice());
+				stat.setString(4, newBook.getCategory());
+				stat.setString(5, newBook.getDescript());
+			}
+			rows = stat.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbClose(con,stat,null);
+		}
+		return rows;
+			
+	}
+```
+
+
+
+4. Update
+
+```sql
+public int updateBook(Book modifyBook) {
+		int rows = 0;
+		Connection con = null;
+		PreparedStatement stat = null;
+		String novel = "update book set price =? where isbn = ?";
+		String magazine = "update book set price =?, descript = ? where isbn = ?";
+		try {
+			con = dbCon();
+			if(modifyBook.getIsbn().startsWith("N")) {
+				stat = con.prepareStatement(novel);
+				stat.setString(2, modifyBook.getIsbn());
+				stat.setInt(1, modifyBook.getPrice());
+				
+			}else {
+				stat = con.prepareStatement(magazine);
+				stat.setString(3, modifyBook.getIsbn());
+				stat.setInt(1, modifyBook.getPrice());
+				stat.setString(2, modifyBook.getDescript());
+			}
+			rows = stat.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbClose(con,stat,null);
+		}
+		return rows;
+			
+	}
+```
+
+
+
+5. Delete
+
+```sql
+public int deleteBook(String isbn) {
+		int rows = 0;
+		Connection con = null;
+		PreparedStatement stat = null;
+		String sql = "delete from book where isbn = ?";
+		try {
+			con = dbCon();
+			stat = con.prepareStatement(sql);
+			stat.setString(1, isbn);
+			rows = stat.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dbClose(con,stat,null);
+		}
+		return rows;
+	}
+	
+```
+
+
+
+각 예제 코드를 보고 복습 필요
+
+
+
+Sql을 String 형태로 넣고 PreparedStatement에 넣은 뒤, setString으로 ?에 들어갈 값을 넣어주는 형태로 Sql을 보낸다.
+
+
+
+※ SELECT의 경우는 Prepared를 쓸 필요가 없음 -> 그냥 Statement로도 OK
+
+
+
+출력 방식 참고
+
+```
+Connection con = null;
+Statement stat = null;
+ResultSet rs = null;
+String sql = "select * from dept";
+stat = con.createStatement();
+rs = stat.executeQuery(sql);
+	while(rs.next()) {
+			System.out.print(rs.getInt("deptno")+"_"); // int값이라 getint
+			//System.out.print(rs.getInt(1));
+			System.out.print(rs.getString("dname")+"_"); // 이름은 String
+			//System.out.print(rs.getString(2));
+			System.out.println(rs.getString("loc")); 
+			//System.out.print(rs.getString(3));
+		}
+```
+
+rs라는 executeQuery를 사용해서 rs.getInt, getString등으로 해당 테이블의 값을 가져온다.
+
+(위의 SetString, SetInt랑 반대로 가져올 때는 get)
