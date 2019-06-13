@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> <!-- 주서어억-->
+<title>HTML 기본구조 </title>
+<style >
+body{
+	font-size: 20px;
+	color: black;
+}
+></style>
+</head>
+<body>
+	안녕안녕<br>
+	<a href="https://www.w3schools.com">Visit W3Schools.com!</a><br>
+	<a href="https://www.naver.com" target="_blank">네이버!</a><br> 
+	<!-- 자동으로 줄을 안 바꿔주는 인라인 함수-->
+
+<abbr title="설명">숨김</abbr> 상자
+
+<p> 빠라밤 </p>
+<p> 빠라밤 </p>
+<hr>
+<p> 빠라밤 </p>
+<p> 빠라밤 </p>
+
+<b> 빠라밤 </b><br>
+<I> 밤밤</I><hr>
+<small>테스트</small><br>
+<sub>테스트2	</sub><br>
+<sup>테스트3</sup><br>
+<ins>밑줄</ins><br>
+<del>삭제</del><br>
+
+<ruby>
+	<span>大韓民國</span>
+	<rt>대한민국</rt>
+</ruby>
+
+<ol>
+	<li>테 </li>
+	<li> 스</li>
+	<li> 트</li>
+</ol>
+<ul>
+	<li>테 </li>
+	<li> 스</li>
+	<li> 트</li>	
+</ul>
+
+<table border =1>
+	<tr>
+	<td>A</td><td>A</td><td>A</td><td>A</td>
+	</tr>
+	<tr>
+	<td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td>	
+	</tr>
+	<tr>
+	<td>A</td><td>A</td><td>A</td>	
+	</tr>
+</table>
+
+<table border =1>
+	<tr><td colspan =2>A</td><td>A</td><td>A</td></tr>
+	<br>
+	<tr><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+	<br>
+	<tr><td>A</td><td>A</td><td>A</td><td rowspan =2>A</td></tr>
+	<br>
+	<tr><td>A</td><td>A</td><td>A</td></tr>
+	<br>
+</table>
+<br>
+
+
+<table border =1>
+	<tr><td rowspan="6" width="150" height=" 200" ></td><td rowspan="2">성명</td><td>한글 </td><td></td><td>나이 (만) </td><td>&nbsp;</td><td rowspan="2">성별</td><td rowspan="2">&nbsp;</td></tr><br>
+	<tr><td>영문</td><td>&nbsp;</td><td>주민등록번호</td><td></td></tr><br>
+	<tr><td colspan="2">현주소</td><td colspan="5"></td></tr><br>
+	<tr><td colspan="2" >e-mail</td><td colspan="5"></td></tr><br>
+	<tr><td colspan="2">신장</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cm</td><td>몸무게</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kg</td><td>혈액형</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;형</td></tr><br>
+	<tr><td colspan="2">전화번호</td><td colspan="2"></td><td>휴대폰</td><td colspan="2"></td></tr><br>
+</table>
+<br>
+
+<img src = "Penguins.jpg" title="펭귀이이이이이이이인"> <br>
+<img src = "Penguins.jpg" width="200" height="200" title="펭귄...."> <br>
+<img src = "./Tulips.jpg" width="200" height="200" title="튜유유유률ㄹ립"> <br>
+<img src = "C:/Users/Public/Pictures/Sample Pictures/Lighthouse.jpg" width="200" height="200"> <br>
+<img src = "C:/Users/Public/Pictures/Sample Pictures/Chrysanthemum.jpg"> <br>
+
+
+<audio src="C:/Users/Public/Music/Sample Music/Sleep Away.mp3" controls autoplay loop> </audio>
+<br>
+
+<video width="800" height="640"  controls="" loop="" >
+	<source src="test.mp4" type="video/mp4">
+</video>
+
+
+<h1>회원가입 </h1>
+<form method="post" action="login.jsp" name="" id="" > <!-- get은 보안에 안좋음, post가 로그인에 적합-->
+
+아 이 디 : <input type="text" name="userid" id = "userid"><br>
+비밀번호 : <input type="password" name="userpw" id = "userpw" required><br>
+<!-- required를 입력하면 그냥 넘어가지 못하게 한다. -->
+
+URL :<input type="url" name="url" ><br> <!-- url 타입의 형식 데이터만 받아줌. -->
+EMAIL : <input type="EMAIL" name="email" ><br>
+연락처 : <input type="tel" name="phon" pattern="\d{3}-\d{4}-\d{4}" placeholder="000-0000-0000"><br>
+<!-- pattern 과 정규표현식으로 원하는 값의 형식을 받을 수 있다. -->
+<!-- placeholder 는 힌트와 같은 기능을 한다. -->
+
+number : <input type ="number" max = "100" min=0 step=5
+title = "0~100사이의 값만 허용합니다. "> <br>
+
+취미 : <input type="checkbox" name="hobby" value="등산"> 등산 
+	  <input type="checkbox" name="hobby" value="등산"> 수영
+	  <input type="checkbox" name="hobby" value="등산"> 코딩 <br>
+<!-- 다중 선택 가능 -->
+
+기술 : <input type="radio" name="skill" value="자바"> 자바 
+	   <input type="radio" name="skill" value="오라클"> 오라클
+	   <input type="radio" name="skill" value="디비"> 디비 <br>
+<!-- 하나만 선택 가능 -->
+
+<!-- 유용한 input type들 -->
+date : <input type="date"><br>
+time : <input type="time"><br>
+week : <input type="week"><br>
+month : <input type="month"><br>
+color : <input type="color"><br>
+range : <input type="range"><br>
+
+Search : <input type = "Search"> <br> <!-- 검색창 -->
+
+넓은 메모장 : <textarea rows="5" col="30">	
+</textarea><br><!-- 넓은 텍스트 입력창 -->
+
+파일 선택 : <input type= file><br> <!-- 파일 올리는 창 -->
+
+셀렉트 연습 : <select>
+	<option>서울</option>	
+	<option>경기</option>
+	<option>강원</option>	
+	<option>경상</option>
+	<option>전라</option>	
+</select> <br>
+
+리스트 검색창 : <input type=text name="fruit" list="fruits">
+<datalist id = "fruits">
+<option value="apple" label = "사과">	
+<option value="orange" label = "오렌지">
+<option value="grape" label = "포도">
+<option value="lemon" label = "레몬">
+<option value="mango" label = "망고">
+<option value="mellon" label = "메론">
+</datalist><br>
+
+<details open>
+	<summary> summary 테스트
+	열린공간 : 
+	<progress value="28" max="100"> 28%
+	</summary>
+	닫힌공간 : <br>
+	A<br>
+	B<br>
+	C<br>
+	D<br>
+</details>
+
+<input type = "button" value ="버튼"> <br>
+
+
+<input type="submit" value = "로그인">
+<input type="reset" value = "취소">
+</form>
+
+<table border =1>
+	<tr><td colspan =2>A</td><td>A</td><td>A</td></tr>
+	<br>
+	<tr><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+	<br>
+	<tr><td>A</td><td>A</td><td>A</td><td rowspan =2>A</td></tr>
+	<br>
+	<tr><td>A</td><td>A</td><td>A</td></tr>
+	<br>
+</table>
+<br>
+
+<h1>1번 </h1> <!-- Block 태그, br이 없어도 자동으로 줄 바꿈을 해줌 -->
+<h2>2번 </h2>
+<h3>3번 </h3>
+<h4>4번 </h4>
+<h5>5번 </h5>
+<h6>6번 </h6>
+
+
+
+
+<p>	<a href="#C8">8번으로</a></p>
+<p>
+<h2>1번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>2번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>3번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>4번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>5번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>6번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>7번</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2><a name="C8">8번</a></h2>
+<p>This chapter explains ba bla bla</p>
+
+</body>
+</html><!-- 주서어억-->
+
