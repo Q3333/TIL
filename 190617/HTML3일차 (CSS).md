@@ -167,7 +167,7 @@ width / height
 
 참고 사진 :
 
-![](<https://github.com/Q3333/ITL/blob/master/190617/boxmodel.png>)
+![](<https://github.com/Q3333/ITL/blob/master/190617/pic/boxmodel.png>)
 
 
 
@@ -304,7 +304,7 @@ float으로 사진이 겹쳐서 깨질 때 사용
 
 
 
-![](<https://github.com/Q3333/ITL/blob/master/190617/색관련.png>)
+![](<https://github.com/Q3333/ITL/blob/master/190617/pic/색관련.png>)
 
 
 
@@ -474,7 +474,7 @@ ul {
 
 참고용 사진 :
 
-![](<https://github.com/Q3333/ITL/blob/master/190617/속성.png>)
+![](<https://github.com/Q3333/ITL/blob/master/190617/pic/속성.png>)
 
 
 
