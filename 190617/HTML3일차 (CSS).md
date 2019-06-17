@@ -1,4 +1,4 @@
-# HTML3일차 (CSS)
+HTML3일차 (CSS)
 
 
 
@@ -167,9 +167,9 @@ width / height
 
 참고 사진 :
 
+
+
 ![](<https://github.com/Q3333/ITL/blob/master/190617/pic/boxmodel.png>)
-
-
 
 
 
@@ -299,8 +299,6 @@ span은 inline의 개념이다.
 #### clear:both;
 
 float으로 사진이 겹쳐서 깨질 때 사용 
-
-
 
 
 
@@ -473,6 +471,8 @@ ul {
 
 
 참고용 사진 :
+
+
 
 ![](<https://github.com/Q3333/ITL/blob/master/190617/pic/속성.png>)
 
