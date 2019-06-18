@@ -169,10 +169,6 @@ width / height
 
 
 
-![](<https://github.com/Q3333/ITL/blob/master/190617/pic/boxmodel.png>)
-
-
-
 ![](<https://github.com/Q3333/ITL/blob/master/190617/pic/boxmodel.PNG>)
 
 
@@ -302,9 +298,13 @@ span은 inline의 개념이다.
 
 float으로 사진이 겹쳐서 깨질 때 사용 
 
-
+1
 
 ![](<https://github.com/Q3333/ITL/blob/master/190617/pic/색관련.png>)
+
+2
+
+![https://github.com/Q3333/ITL/blob/master/190617/pic/%EC%83%89%EA%B4%80%EB%A0%A8.PNG](https://github.com/Q3333/ITL/blob/master/190617/pic/색관련.PNG)
 
 
 
