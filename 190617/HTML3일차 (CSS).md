@@ -173,6 +173,8 @@ width / height
 
 
 
+![](<https://github.com/Q3333/ITL/blob/master/190617/pic/boxmodel.PNG>)
+
 
 
 Client 제공 :
