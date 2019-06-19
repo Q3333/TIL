@@ -1,4 +1,4 @@
-git °ü·Ã
+ï»¿git ê´€ë ¨
 
 git remote rm origin
 
