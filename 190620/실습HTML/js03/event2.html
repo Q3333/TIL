@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트</title>
+<script>
+	var cnt = 0;
+	var cnt2 = 0;
+ 
+
+ // 	 window.addEventListener("load", function(){
+	//     var btn1 = document.querySelector("#btn1");
+	//     btn1.onclick = function(){
+	//     	cnt ++
+	//     	count1.innerHTML = cnt;
+	    	
+	//     } 
+	// })
+
+ // 	  window.addEventListener("load", function(){
+	//     var btn2 = document.querySelector("#btn2");
+	//     btn2.onclick = function(){
+	//     	cnt2 ++;
+	//     	cnt ++;
+	//     	count1.innerHTML = cnt;
+	//     	count2.innerHTML = cnt2 ;
+	    	
+	//     } 
+	// })
+
+
+//답 
+window.addEventListener("load", function(){
+ 	document.querySelector("#btn1").onclick = function(){
+	    var span1 = document.querySelector("#count1");
+	   span1.innerHTML=Number(span1.innerHTML)+1;
+	};
+	document.querySelector("#btn2").onclick = function(){
+	    var span2 = document.querySelector("#count2");
+	   span2.innerHTML=Number(span2.innerHTML)+1;
+	   document.querySelector("#btn1").onclick(); // 이벤트 강제 발생
+	};
+}, false);
+
+
+
+</script>
+</head>
+<body>
+ <h3> 자바스크립트 이벤트 </h3>
+# 강제 이벤트 발생  방법 : 이벤트소스객체.on이벤트();<br>
+<button id="btn1">Button 1</button>
+<button id="btn2">Button 2</button><br>
+<h3>Button 1 Click Count : <span id="count1">0</span></h3>
+<h3>Button 2 Click Count : <span id="count2">0</span></h3>
+</body>
+</html>
+
+	 <!-- window.addEventListener("load", function(){
+	    var h3 = document.querySelector("#evt");
+	    h3.onclick = function(){
+	    	alert("까꿍");
+	    	// h3.onclick = null; //이 줄을 넣어주면 딱 한번만 실행시켜준다.
+	    	// this.onclick = null; //h3 대신 this를 넣어줘도 정상수행
+	    } 
+
+	    document.querySelector("#evt2").onclick = function(){
+	    	this.style.color = 'blue';
+	    	this.style.backgroundColor = 'orange';
+	    } -->

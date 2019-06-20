@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>윈도우 객체의 메서드 써보기</title>
+
+<script type="text/javascript">
+window.onload = function(){
+	var h1 = document.createElement("h1");
+	var text1 = document.createTextNode("새 요소 추가");
+	h1.appendChild(text1);
+	document.body.appendChild(h1);
+
+	var img1 = document.createElement('img');
+	img1.src = "Hydrangeas.jpg";
+	img1.width=300;
+	img1.height=300;
+	document.body.appendChild(img1);
+
+	var img2 = document.createElement('img');
+	img2.setAttribute('src', "Tulips.jpg");
+	img2.setAttribute('width', 300);
+	img2.setAttribute('height', 300);
+	console.log(img2.getAttribute('src'));
+	document.body.appendChild(img2);
+
+	console.log(document.getElementById("j1").innerHTML);
+	var nodelist = document.getElementsByName("j2");
+	console.log(nodelist.length);
+	console.log(nodelist[0].innerHTML+","+nodelist[1].innerHTML);
+	nodelist = document.getElementsByTagName("p");
+	console.log(nodelist.length);
+	
+	var p1 = document.getElementById("j1");
+	p1.style.border="2px solid blue";
+	p1.style.color="orange";
+	p1.style.fontSize="20";
+	console.log(document.getElementById("j1").parentNode.nodename);
+
+   //document.body.removeChild(p1); -> 삭제
+
+
+
+}
+
+// console.log(document.getElementById("j1").innerHTML);
+// var nodelist = document.getElementsByName("j2");
+// console.log(nodelist.length);
+// console.log(nodelist[0].innerHTML+","+nodelist[1].innerHTML);
+// nodelist = document.getElementsByTagName("p");
+// console.log(nodelist.length);
+// var p1 = document.getElementById("j1");
+// p1.style.border="2px solid blue";
+// p1.style.color="orange";
+// p1.style.fontSize="20";
+// console.log(document.getElementById("j1").parentNode.nodename);
+
+  
+
+	
+</script>
+
+
+</head>
+<body>
+<h3> Document 객체를 이용한 문서 구조 변경 </h3>
+<p id = "j1"> JavaScript</p>
+	<p name = "j2"> jQuery</p>
+	<p name = "j2"> SencaTouch</p>
+	<p>Node.js</p>
+
+
+</body>
+</html>

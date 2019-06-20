@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS05</title>
+</head>
+<body>
+<h3> 자바스크립트에서 배열은 모든 타입을 요소로 저장할 수 있습니다.</h3> <br>
+함수 내부에 함수를 정의 할 수 있습니다. => 외부함수와 충돌이 발생되는 경우, 
+
+함수를 사용하는 내부에 정의할수 있으며, 내부함수는 내부함수가 정의된 함수 내부에서만 호출할 수 있습니다.<br><hr>
+
+<script type="text/javascript">
+	
+
+	// function square(x){
+	// return x*x;
+	// }
+
+	// function pythagoras(width,height){ // 직각 삼각형의 빗변의 길이
+	// 	return Math.sqrt(square(width)+square(height));
+	// }
+
+	function pythagoras(width,height){ // 직각 삼각형의 빗변의 길이
+		function square(x){ // 내부함수
+			return x*x;
+			}
+		return Math.sqrt(square(width)+square(height));
+	}
+
+	document.write("밑변 3 높이 4인 삼각형의 빗변의 길이 : " + pythagoras(3,4) + "<br>")
+
+
+	function square (width, height, hypotenuse){
+	if(width*width + height * height == hypotenuse *hypotenuse)
+		return true;
+	else{
+		return false;
+	}
+}
+</script>
+
+
+</body>
+</html>
