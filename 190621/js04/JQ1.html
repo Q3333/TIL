@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+	// jQuery(document).ready(function(){ alert("ready event handler1");});
+	// $(document).ready(function(){ alert("ready event handler2"); }); 
+	// // $는 jQuery의 alias, $()은 jQuery()와 동의어다. 주로 $를 더 많이 씀
+
+	// $(function(){alert("즉시 실행될 함수");});
+
+	$(document).ready(function(){
+		// $("h3").css("color", "blue").css("backgroundColor" ,"orange").css("border", "solid 5px"); //h3태그에만 css넣기
+		// $("*").css("color", "blue").css("backgroundColor" ,"orange").css("border", "solid 5px"); // * = 전부에다가 css넣기
+		// $("div, p").css("color", "blue").css("backgroundColor","orange"); // div와 p 에 css넣기
+		// $("#simple").css("color", "blue").css("backgroundColor" ,"orange"); // id가 simple인 부분에 css넣기
+		// $(".todo").css("color", "blue").css("backgroundColor" ,"orange"); // class가 todo인 부분에 css넣기
+		// $("body>p").css("color", "blue").css("backgroundColor" ,"orange"); // body 밑에 있는 p 부분에 css넣기
+
+		$("input[type='text']").val("Hello, jQuery~");
+		$("input:password").css("backgroundColor", "cyan");
+		$("input:focus").css("backgroundColor", "lightgray")
+
+});
+</script>
+
+</head>
+<body>	
+
+	<h3> JQuery </h3>
+	<h3> JQuery는 JavaScript보다 코드가 간결해서 코드량을 1/3으로 줄여준다. </h3>
+	<h3 id = "simple"> JQuery 기본 효과를 조합하면 멋진 효과를 만들 수 있다. </h3>
+
+	<div class ="todo"> <p> 1. 좀 쉬기 </p> </div>
+	<p> 2. 많이 먹기 </p>
+	<article class ="todo"> 3. 공부하기 </article>
+	<ul>
+		<li> 4. 놀기 </li>
+		<li> 5. 자기 </li>
+	</ul>
+
+
+	<br> text : <input type ="text" />
+	<br> password : <input type ="password" />
+	<br> radio : <input type ="radio" />
+	<br> checkbox : <input type ="checkbox" />
+	<br> file : <input type ="file" />
+	<br> email : <input type ="email" />
+	<br> search : <input type ="search" autofocus="" />
+	<br> tel : <input type ="tel" />
+	<br> url : <input type ="url" />
+
+</body>
+</html>

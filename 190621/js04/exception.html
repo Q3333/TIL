@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+
+		function abc(a){
+			if(!(a instanceof Array)){
+				throw new Error(a + " is not an array");
+			}
+			return a;
+		}
+
+//		abc("ABC");
+	var d = ["a","b","c"];
+
+	try{
+		var p = abc(d);
+		p.forEach(function(v) { console.log(v) });
+	}catch(e){
+		alert(e);
+	}
+
+	</script>
+	
+
+</body>
+</html>
