@@ -1,0 +1,140 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta  charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+		
+		}
+		#panel{
+			width:600px;
+			height:300px;
+			border:1px solid #999;
+			position:relative;
+		}
+		
+		#bar{
+			position:absolute;
+			left:50px;
+			top:190px;
+			width:500px;
+			height:20px;
+			
+			background:#F30;
+		}
+		
+		#img1{
+			position:absolute;
+			left:50px;
+			top:120px;
+					
+		}
+		
+		#nav{
+			text-align:center;
+			width:600px;
+		}
+	</style>
+	
+	<script>
+
+
+		 // 시작위치 구하기.
+		 // 마지막 위치.(시작위치 + bar의 넓이 - 이미지 넓이)
+		 // 이미지의 현재 위치를 시작위치로 설정.
+		 // 사용하게 될 이미지(물고기) 엘리먼트를 변수에 저장.
+		 // 시작버튼 이벤트 리스너 등록.
+		 // 정지버튼 이벤트 리스너 등록.
+		 // 타이머 실행.
+		 // 이미지 움직이기. -  2px만큼 이동합니다.
+         //  위치값이 마지막 위치값을 넘어가는 순간, 
+		//  시작 위치<--- 마지막 위치로 이동될수 있도록 방향을 바꿔준다.
+		// 위치값이 시작위치값을 넘어가는 순간,
+		// 시작위치 ---->마지막 위치로 이동될수 있도록 방향을 바꿔준다.
+		// 최종적으로 조절된 위치값을 left에 적용시켜 준다.
+		// 타이머 정지시키기.
+
+
+		var po_start;
+		var po_end; 
+		var fish;	 
+		var nTimerID;	// 참여 인원수 저장 변수
+		window.onload=function(){
+
+			po_start = 50;
+			po_end = 50 + 500 - 70;
+			fish = document.getElementById("img1");
+			nTimerID=0;
+		
+
+			// 이벤트 초기화 실행.
+			var btnStart = document.getElementById("btn_start");
+			btnStart.addEventListener("click", function(){
+				var img = fish.getElementsByTagName("img")[0]; 
+				img.style.left = po_start + 20 + "px";	
+				
+
+				// if(nTimerID==0){
+				// 	fish.style.left = po_start + 20;			
+				// 	nTimerID = setInterval(createNumber,500);	
+				// }
+			}
+			,false);
+		}
+
+			var btnStart = document.getElementById("btn_start");
+			btnStart.addEventListener("click", function(){
+				if(nTimerID==0){
+					//입력된 참여인원수를 구해옵니다.
+					nTotalMember = Number(labTotal.value);
+					// 타이머 시작시 #panel1의 글자색을 초기화 시켜 줍니다.
+					panel1.style.color = "#000000";				
+					nTimerID = setInterval(createNumber,20);	
+				}
+			}
+
+
+		// 	var btnStop = document.getElementById("btn_stop");
+		// 	btnStop.addEventListener("click",function(){
+		// 		if(nTimerID){
+		// 			clearInterval(nTimerID);
+		// 			nTimerID = 0;
+		// 			//출력효과 추가.
+		// 			panel1.style.color = "#ff0000";	
+		// 			panel1.style.fontSize = "200px";
+		// 		}
+		// 	},false);
+		// }		
+		 
+		
+		// // 랜덤하게 1에서 참여인원수 사이의 숫자를 만들어 냅니다.
+		// function createNumber(){	
+		// 	var nNum = 1+Math.floor(Math.random()*this.nTotalMember);
+		// 	//만들어진 숫자를 innerHTML에 대입시켜 줍니다.
+		// 	panel1.innerHTML = nNum;
+		// 	// 폰트 크기를 100~200으로 랜덤하게 설정해줍니다.
+		// 	panel1.style.fontSize = 100+(Math.random()*100)+"px";
+		// }
+			
+		 
+	</script>
+</head>
+
+<body>	
+	<div> 
+		<h4>#img1을 #bar의 영역에서 계속 좌우로 움직이도록 만들어주세요.</h4>
+		<div id="panel">
+			<div id="bar"> </div>
+			<div id="img1">
+				<img src="fish.png">
+			</div>
+		</div>
+		<div id="nav">
+			<button id="btn_start">시작</button>
+			<button id="btn_stop">멈춤</button>
+		</div>
+	</div>       
+</body>
+</html>

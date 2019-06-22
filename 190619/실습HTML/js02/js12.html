@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>윈도우 객체의 메서드 써보기2</title>
+
+<script type="text/javascript">
+	window.onload = function(){
+
+		document.getElementById('up').onclick = function(){
+			window.moveBy(0,-10);
+		};
+
+		document.getElementById('left').onclick = function(){
+			window.moveBy(-10,0);
+		};
+
+		document.getElementById('right').onclick = function(){
+			window.moveBy(10, 0);
+		};
+
+		document.getElementById('down').onclick = function(){
+			window.moveBy(0,10);
+		};
+
+}
+	
+
+</script>
+</head>
+<body>
+	<h3>js12.html</h3>
+	<input type = "button" id="up" value = "	UP 			"/><br/>
+	<input type = "button" id="left" value = "	LEFT 		"/><br/>
+	<input type = "button" id="right" value = "	RIGHT 		"/><br/>
+	<input type = "button" id="down" value = "	DOWN 		"/><br/>
+
+		
+
+</body>
+</html>

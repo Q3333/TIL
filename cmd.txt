@@ -1,0 +1,54 @@
+mkdir
+
+*** 자주써야댐 /t(탭)을 누르면 자동완성됨
+
+
+cd .. 은 뒤로가기
+
+ls 현재 dir , 리스트
+
+mv 옮길파일 옮길곳
+
+ctrl + c 는 나가기
+
+*깃 관리는 무조건 최상단폴더 TIL에서
+
+******깃에서 가장 많이 쓰게될 명령어들 *********
+git status = 깃의 현재 상태를 물어봄
+
+1.git add : 관리(저장) 목록에 추가
+
+2.git commit : 저장 & 스냅샷(세이브포인트를 만들어줌, 돌아갈곳을 생성)
+git commit -m "first"(메세지)를 넣어줘야함
+	(git log로 확인)
+
+
+3.git push
+
+
+git hub에 넣는법
+
++를 만들고 new repository를 클릭
+
+폴더 이름 : TIL - 아무것도 안건드리고 Create
+
+// ? HTTPS 로 클릭해야함.(멀티캠퍼스에서는 안됨?)
+
+comit 아래 줄을 복사 + 붙여넣기(remote줄)
+
+그 아래 줄 push 복사 붙여넣기
+
+Username칠때 github에 가입했을 때 그 이름.( Signed in as 뒤에 있는 이름)
+그다음 비번입력.
+
+
+3-2
+두번째 파일 넣는 법
+git add . 
+git commit 
+git push
+세개 반복
+
+git config --global user.email "hil02047@gmail.com"
+git config --global user.name "Gyusang Jo"
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+window.onload = function(){
+
+document.getElementById("d1").innerHTML="<strong> 강조체 </strong><i>이탤릭</i> ";
+document.getElementById("d2").textContent="<strong> 강조체 </strong><i>이탤릭</i>"; // 태그까지 다 가져옴
+document.getElementById("d3").innerText="<strong> 강조체 </strong><i>이탤릭</i>"; // 태그까지 다 가져옴
+
+console.log(document.getElementById("d4").innerHTML); // tag까지 다 가져옴
+console.log(document.getElementById("d4").textContent); //text만 가져옴
+
+
+}
+
+
+
+</script>
+</head>
+<body>
+	<div id="d1">,</div>
+	<div id="d2">,</div>
+	<div id="d3">,</div>
+	<div id="d4">
+		<div id ="d5">
+			내용
+		</div>
+	</div>
+
+</body>
+</html>
