@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" metadata-complete="true" version="4.0">
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+  <servlet>
+    <servlet-name>JoinServlet</servlet-name>
+    <servlet-class>lab.web.controller.JoinServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JoinServlet</servlet-name>
+    <url-pattern>/join</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>List</servlet-name>
+    <servlet-class>lab.web.controller.ListAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>List</servlet-name>
+    <url-pattern>/list.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
