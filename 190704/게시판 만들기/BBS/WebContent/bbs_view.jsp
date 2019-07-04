@@ -125,6 +125,7 @@
 	 <span id='${comment.cmid}' style='display:none'>
 	 <form method=post action=./delete_comment.do>	 
 	 암호 <input type=password name=password size=5>
+	 <input type=hidden  name='page'  value='${page}'>
 		<input type=hidden name='num' value='${comment.cmid}'>
 		<input type=hidden name='read_num' value='${article.bid}'>
 		<input type=submit value='삭제'>

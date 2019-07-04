@@ -13,26 +13,33 @@ import lab.board.model.BbsDAO;
 import lab.board.model.BbsVO;
 import lab.board.model.CommentVO;
 
-public class BbsRemoveAction extends HttpServlet {
+
+
+public class BdsCommentRemoveAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		BbsDAO dao = new BbsDAO();
-		BbsVO  form = null;
+		CommentVO form = null;
 		String page = null;
 		page = request.getParameter("page");
-		int bid = Integer.parseInt(request.getParameter("bid"));
+		int bid = Integer.parseInt(request.getParameter("read_num"));		
+		int cmid = Integer.parseInt(request.getParameter("num"));
+		
 		String password = request.getParameter("password");
-		if(password.equals(dao.getBbsPassword(bid))) {
-			if(dao.deleteBbs(bid)>0) {
-				response.sendRedirect("./list.do?page="+page);
+		
+		if(password.equals(dao.getCommentPassword(cmid))) {
+//			if(dao.deleteCmt(cmid)>0) {
+			if(true) {
+				dao.deleteCmt(cmid);
+				response.sendRedirect("./view.do?bid="+bid+"&page="+page);
 			}
 		}else {
 			out.print("<script>");

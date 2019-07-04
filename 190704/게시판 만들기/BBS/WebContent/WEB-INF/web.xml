@@ -57,7 +57,7 @@
     <servlet-name>BbsRemoveAction</servlet-name>
     <url-pattern>/delete.do</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <servlet-name>BbsCommentAction</servlet-name>
     <servlet-class>lab.board.controller.BbsCommentAction</servlet-class>
   </servlet>
@@ -65,4 +65,12 @@
     <servlet-name>BbsCommentAction</servlet-name>
     <url-pattern>/comment.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>BdsCommentRemoveAction</servlet-name>
+    <servlet-class>lab.board.controller.BdsCommentRemoveAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BdsCommentRemoveAction</servlet-name>
+    <url-pattern>/delete_comment.do</url-pattern>
+  </servlet-mapping>  
 </web-app>

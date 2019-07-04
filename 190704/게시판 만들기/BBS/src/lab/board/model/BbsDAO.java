@@ -330,5 +330,56 @@ public class BbsDAO {
 
 	}
 	
+	public String getCommentPassword(int cmid) {
+		//글번호 PK로 게시글 패스워드 조회 리턴
+		
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		CommentVO cmt = null;
+		String pwd = null;
+		String sql = "select password from BBS_COMMENT where cmid = ? "; 
+		try {
+			con = dbCon();
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, cmid);
+			rs = stmt.executeQuery();
+			if(rs.next()) {
+				pwd = rs.getString("password");
+			}//if end
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			dbClose(con, stmt, null);
+		}
+		
+		return pwd;
+		
+	}
+	
+	public int deleteCmt(int cmid) {
+
+		String sql = null;
+		int cnt = -1; 
+		Connection con = null;
+		PreparedStatement stat = null;
+			sql = "delete from BBS_COMMENT where cmid= ? ";
+		try {
+			con = dbCon();
+
+			stat = con.prepareStatement(sql);
+			stat.setInt(1, cmid);
+			cnt += stat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose(con, stat, null);
+		}
+		return cnt;
+
+	}
+	
 	
 }
