@@ -1,1 +1,0 @@
-alter table bbs_file add (savedfile varchar2(50));
