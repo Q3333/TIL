@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+  <select id="getProductList" resultType="lab.spring.web.model.ProductVO">
+    select * from products
+  </select>
+  <select id="getProduct" resultType="lab.spring.web.model.ProductVO">
+    select * from products where pcode = #{pcdoe}
+  </select>
+  
+  <insert id="addProduct" parameterType="lab.spring.web.model.ProductVO">
+  	insert into products (pcode, pname, price, quant, pdesc)
+  	values (#{pcode}, #{pname}, #{price}, #{quant}, #{pdesc})
+  </insert>
+  
+  <update id="modifyProduct" parameterType="lab.spring.web.model.ProductVO" >
+  update products set pcode=#{pcode}, pname=#{pname}, price=#{price}, quant=#{quant}, pdesc=#{pdesc} where pcode = #{pcode}
+  </update>
+  <delete id="removeProduct" parameterType = "string">
+  delete products where pcode = #{pcode}
+  </delete>
+  
+</mapper>
