@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sample</title>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+<script src="https://d3js.org/d3-axis.v1.min.js"></script>
+<script src="./js/bar6.js"></script>
+<style>
+svg { width: 320px; height: 240px; border: 1px solid black; }
+.bar { fill : orange; }
+.barNum {
+	font-size: 9pt;
+	text-anchor : middle;
+}
+.axis text {
+	font-family: sans-serif;
+	font-size: 11px;
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+}
+.barName {
+		font-size: 9pt;
+		text-anchor : middle;
+		}
+</style>
+	</head>
+	<body>
+		<h1>세로형 막대그래프 - 눈금 간격 조정</h1>
+		<svg id="myGraph"></svg>
+		<br>
+ticks() - 눈금 간격 지정, 기본값 10 <br>
+ticks()는 모두가 지정한 값과 같은 간격이 됩니다 <br>
+tickValues()는 서로 다른 간격으로 표시합니다.<br>
+tickFormat() 는 눈금에 표시할 숫자에 서식 지정합니다<br>
+		 
+	</body>
+</html>
+
+
+
