@@ -169,7 +169,7 @@ width / height
 
 
 
-![](<https://github.com/Q3333/ITL/blob/master/190617/pic/boxmodel.PNG>)
+![](<https://github.com/Q3333/ITL/blob/master/WEB(front)/1.HTML/190617/pic/boxmodel.PNG>)
 
 
 
