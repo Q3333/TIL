@@ -693,9 +693,124 @@ cd ../../boot
 
 
 
+
+
+
+
+#### 범위 지정 편집
+
+
+
 yy : 복사
 
 dd : 잘라내기(삭제)
 
 p : 붙여넣기
+
+
+
+<참고 사진>
+
+![1564104618052](<https://github.com/Q3333/ITL/blob/master/Linux/190808/images/vi_search.PNG>)
+
+
+
+문서에서 해당 단어 검색
+
+/단어
+
+
+
+##### 파일에서 텍스트 내용 바꾸기
+
+<참고 사진>
+
+![1564104618052](<https://github.com/Q3333/ITL/blob/master/Linux/190808/images/vi_change.PNG>)
+
+
+
+##### 여러 파일 같이 편집하기(파일 내용 불러오기)
+
+<참고사진>
+
+![1564104618052](<https://github.com/Q3333/ITL/blob/master/Linux/190808/images/vi_file_read.PNG>)
+
+
+
+<참고2>
+
+![1564104618052](<https://github.com/Q3333/ITL/blob/master/Linux/190808/images/vi_file_read2.PNG>)
+
+
+
+<참고3>
+
+![1564104618052](<https://github.com/Q3333/ITL/blob/master/Linux/190808/images/vi_file_read3.PNG>)
+
+
+
+
+
+##### vi에서 셀 명령 사용하기
+
+![1564104618052](<https://github.com/Q3333/ITL/blob/master/Linux/190808/images/vi_shell.PNG>)
+
+
+
+# 셸
+
+#### 셸의 기능
+
+- 명령어 해석기 기능, 프로그래밍 기능, 사용자 환경 설정 기능
+
+  -명령어 해석기 : 해석기(interpreter)와 번역기(translater)기능 
+
+  -프로그래밍 기능 : 셸은 자체 내의 프로그래밍 기능이 있어 반복적으로 수행하는 작업을 하나의 프로그램으로 작성 가능
+
+  -사용자 환경 설정 기능 : 환경설정 
+
+
+
+#### 셸의 종류
+
+- 본 셸, 콘 셸, C 셸, 배시 셸, 대시 셸
+
+
+
+리눅스의 기본 셸은 배시 셸(bash shell)
+
+
+
+##### 출력
+
+echo : 한줄 출력 ex) echo ㅎㅇ
+
+printf : 형식 출력 ex) printf "%d + %d = %d\n" 10 10 20
+
+
+
+* 전체 선택 : *
+
+
+
+ex) ls *
+
+
+
+cp * 경로 (현재 경로의 모든 파일을 경로(ex ./tmp) 에 복사한다.)
+
+
+
+- 이전 경로로 이동 : cd
+
+
+
+
+
+- 특수문자 ;과 |
+  - ;(쌍반점,세미콜론) 과 |(파이프)는 명령과 명령을 연결
+  - ;은 연결된 명령을 왼쪽부터 차례로 실행
+  - |는 왼쪽 명령의 실행 결과를 오른쪽 명령의 입력으로 전달
+
+
 
