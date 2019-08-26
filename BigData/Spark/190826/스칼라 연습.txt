@@ -1,0 +1,461 @@
+type Name = String
+type Person = (String, Int)
+type Ftype = String => Int
+val name: Name = "홍길동"
+var person: Person = ("korea", 24)
+var f:Ftype = text => texttoInt
+
+for (x <- 1 to 10 ) { 
+println(x)
+}
+
+for (x <- 1 until 10 ) { 
+println(x)
+}
+
+
+for (i <- 10) if (i % 2 == 0 ) { 
+println(i)
+}
+
+
+for (i <- 1 to 10) if (i % 2 == 0 ) { 
+println(i)
+}
+
+for ( (nu, index) <- lst.zipWithIndex ) {
+println(s"$index : $num")
+}
+
+for(x <- 1 until 5 ; y <- 1 until 5){
+println (x + "*" + y + " = " + x*y + "|")
+}
+
+
+def name () = {
+val a = 10
+a
+}
+
+def name2 () : int = {
+val a = 10
+return a } 
+
+
+def name3 () = { //error?
+val a = 10
+return a } }
+
+def addOne(m: Int): Int = m + 1
+
+
+object EX{
+def main(args: Array[String]): Unit = {
+val thisYear = 2019
+val fixedValueFunction = go(thisYear, _:String)
+fixedValueFunction("test1")
+fixedValueFunction("test2")
+fixedValueFunction("test3")
+}
+def go(thisYear:Int, string: String) = {
+println(string + ":" + thisYear)
+}}
+}
+
+
+
+object EX{
+def main(args: Array[String]): Unit = {
+val result = calc(x => x * x, 2,5)
+println(result)
+}
+def calc(f: Int => Int, start: Int, end: Int ) = {
+//합계를 구하는 재귀 함수
+def loop(index:Int, sum:Int): Int = {
+if (index > end ) sum // 인덱스가 끝 값보다 크면 sum을 반환
+else loop (index + 1, f(index) + sum)
+}
+loop(start,0) // 루프를 최초 호출
+}
+}
+
+
+
+}
+def go(thisYear:Int, string: String) = {
+println(string + ":" + thisYear)
+}}
+}
+
+print
+
+
+def printlnStrings(args. String*) = {
+for (arg <- args) {
+println(arg);
+}
+
+case class Person(name:String) 
+ implicit def stringToPerson(name:String) : Person = Person(name)
+def sayHello(p:Person): Unit = {
+print("Hello, " + p.name)
+}
+
+sayHello("korea")
+
+case class Fruit2(name:String)
+{
+}
+
+
+class Calculator(brand:String){
+var color: String = if(brand =="TI"){
+"blue"}
+else if (brand == "HP"){
+"black" }
+else {
+"white"}
+def add(m:Int, n:Int) :Int = m+n }
+
+
+
+오버로딩
+abstract class Shape {
+def getArea():Int
+}
+
+class Circle(r: Int) extends Shape {
+def getArea(): Int = {r * r * 3}
+}
+
+
+
+
+trait Car {
+val brand : String }
+
+trait Shiny {
+val shineReffaction: Int
+}
+
+class BMW extends Car {
+val brand = "BMW"
+}
+
+
+class BMW extends Car, Shiny{
+var brnad = "BMW"
+}
+//error?
+
+class BMW extends Car with Shiny {
+val brand = "BMW"
+var shineRefraction = 12
+}
+
+
+
+abstract class Robot {
+def shoot = "뿅뿅"
+}
+
+trait M16 extends Robot {
+override def shoot ="빵야"
+}
+
+
+trait Bazooka extends Robot {
+override def shoot ="뿌왕뿌왕"
+}
+
+trait Daepodong extends Robot {
+override def shoot = "콰르르르릉"
+
+class Mazinga extends Robot with M16 with Bazooka with Daepodong 
+var robot = new Mazinga println(robot.shoot)
+
+
+
+mm
+
+
+
+abstract class AnotherRobot {
+def shoot = "뿅뿅"
+}
+
+trait AnotherM16 extends AnotherRobot {
+override def shoot = super.shoot + "빵야"
+}
+
+
+trait AnotherBazooka extends AnotherRobot {
+override def shoot = super.shoot + "뿌왕뿌왕"
+}
+
+trait AnotherDaepodong extends AnotherRobot {
+override def shoot = super.shoot +  "콰르르르릉"
+}
+
+class SuperMazinga extends AnotherRobot with AnotherM16 with AnotherBazooka with AnotherDaepodong 
+
+var robot = new SuperMazinga 
+
+
+println(robot.shoot)
+
+
+
+def matchFunction(input: Any): Any = input match {
+	case 100 => "hundred"
+	case "hundred" => 100
+	case etcNumber: Int => "입력값은 100이 아닌 Int형 정수입니다."
+	case _ => "기타"
+}
+
+case class Person(name: String, age:Int)
+val alice = new Person("Alice", 25)
+val bob = new Person("Bob", 32)
+var charlie = new Person("Charlie", 32)
+
+for ( person <- List(alice, bob, charlie)) {
+person match {
+case Person("Alice", 25) => println("Hi Alice!")
+case Person("Bob", 32) => println("Hi Bob!")
+case Person(name, age) => println(
+"Age: " + age + " year, name : " + name + "?")
+}
+}
+}
+
+object Emergency {
+def unapply(number: String): Boolean = {
+if (number.length == 3 && number.forall(_.isDigit)) true
+else false
+}
+}
+
+object Normal {
+def unapply(number: String): Option[Int] = {
+try {
+var o = number.replaceAll("-", "")
+Some(number.replaceAll("-", "").toInt)
+}catch{
+case _: Throwable => None
+}
+}
+}
+
+
+var number1 = "010-222-2222"
+var number2 = "119"
+var number3 = "포도 먹은 돼지"
+
+var numberList = List(number1,number2,number3)
+for(number<- numberList){
+number match{
+case Emergency() => println("긴급전화입니다.")
+case Normal(number) => println("일반전화입니다. - " + number)
+case _=> println("판단할 수 없습니다.")
+}
+}
+
+
+var list1 = "a" :: "b" :: "c" :: Nil
+	for(x <- 0 until list1.size)
+	println(list1(x))
+
+var list2 = "d" :: "e" :: Nil
+
+var list0 = list1 ::: list2 }
+	for (x <- 0 until list0.size)
+		println(list0(x))
+}
+
+
+val list3 = "a" :: "b" :: "c" :: Nil
+val list4 = 1 :: 2 :: 3 :: Nil
+val list5 = 2 :: 2 :: 4 :: Nil
+
+println(list3 ++ list4)
+println(list3.apply(0))
+println(list3.reverse)
+println(list4.max)
+println(list4.min)
+println(list4.sum)
+println(list4.mkString(","))
+println(list4.exists(a=>0>3))
+println(list4.exists(_ > 3))
+println(list4.contains(1))
+println(list4.isEmpty)
+println(list4.distinct)
+
+
+val map = Map( "number1" -> "aa" ,
+		"number2" -> "bb",
+		"number3" -> 3,
+		5 -> "cc")
+println(map.isEmpty)
+println("whole map : " + map)
+println("keys : " + map.keys)
+println("values : " + map.values)
+println(map("number1"))
+
+map + ("num4" -> 44)
+println(map)
+val map2 = Map("n1" -> 100, "n2" -> 200)
+map ++ map2
+println(map)
+map -- (num4)
+println(map)
+
+var basket2 : Set[String] = Set()
+basket2 += "토마토"
+basket2 += "당근"
+basket2 += "감자"
+basket2 += "사과"
+
+var basket : Set[String] = Set()
+basket += "사과"
+basket += "포도"
+basket += "포도"
+basket += "바나나"
+
+
+var t1 = (1,2) // 튜플생성
+var t2 = ("a", 1, "c")
+var n1 = t1._2	//튜플 내용 참조
+val n2 = t2._3
+
+
+
+
+
+var students = Map (
+1-> "A",
+2-> "B",
+3-> "C" )
+
+val one = students.get(1)
+val four = students.get(4)
+
+println(one)
+println(four)
+println(one.get)
+println(four.getOrElse("값이 없습니다."))
+
+val donuts : Seq[String] = Seq ("Plain Dounet", "SDonut", "DN")
+
+
+
+println(s"slice from index 0 to 1 = ${donuts.slice(0,1)}")
+println(s"slice from index 0 to 2 = ${donuts.slice(0,2)}")
+
+val o = List(1,2,3,4)
+println(o)
+val n = o.map(i => i * 10)
+println(n)
+
+val n2 = o.filter(i => i >= 3).map(i => i*2)
+println(n2)
+
+val sum = o.foldLeft(0.0)(_ + _)
+println(s"Sum = $sum")
+
+val oo = List(5,6,7,8,9)
+val n = o zip oo (List 1이랑 2랑 합쳐서 (1.a 2.a) 같은 식으로 묶어줌
+val nn = o ::: oo (List 1이랑 2랑 이어붙임 abcde~abcde)
+println(n)
+println(nn)
+
+val n2 = o.find(i => i >= 2)
+val nn2 = o.find(i => i == 9)
+
+val o2 = List(1,2,3,4,5,6,0)
+val n3 = o.drop(4)
+val nn3 = o.dropWhile( i=> i<3)
+println(n3)
+
+val o4 = List(List(1,2,3,4),5,6)
+val n4 = o.flatten
+println(n4)
+
+val alpa1 : Seq[String] = Seq("A","B","C")
+val alpa2 : Seq[String] = Seq("D","E")
+val listAlpa: List[Seq[String]] = List(alpa1,alpa2)
+val listAlpaFromFlatten: List[String] = listAlpa.flatten
+
+try{
+val f = new FileReader("input.txt")
+}catch{
+case ex: FileNotFoundException=> {
+println("Missing file exception")
+}
+
+case ex: IOException=> {
+println ("IO Exception")
+}
+
+} finally {
+println("Exiting finally...")
+}
+}
+
+
+파일 읽어 들이기
+
+object Demo {
+def main(args: Array[String]) {
+print("Please enter your input : " )
+val line = Console.readLine
+
+println("Thanks, you just typed: " + line)
+}
+}
+
+import scala.io.Source
+
+object Demo {
+def main(args: Array[String]) {
+println("Following is the content read:" )
+
+Source.fromFile("Demo.txt").foreach {
+println("파일읽기")
+}
+}
+}
+
+
+import scala.io.StdIn.readLine
+import java.io.File
+import java.io.PrintWriter
+import java.io.Console
+
+object Ex{
+def main(args: Array[String]): Unit = {
+val fileName = "test.txt"
+var input = Console.readLine("파일에 쓸 내용을 입력하세요 !")
+
+val writer = new PrintWriter(new File(fileName))
+	writer.write(input)
+	writer.close
+//출력 파일은 패키지 디렉토리에 생성됩니다.
+print("입력하신 텍스트를 " + fileName" 에 저장했습니다. ")
+}
+}
+
+
+Either
+둘 중 하나를 선택
+
+object Ex {   
+   def main(args: Array[String]): Unit = {
+       val input = scala.io.StdIn.readLine("값을 입력하세요:")
+       val result: Either[String, Int] = try {
+          Right(input.toInt)
+       } catch {
+         case e : Exception => Left(intpu)
+       }
+       print(result.getClass)             
+   }
+}
