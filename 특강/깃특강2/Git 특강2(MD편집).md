@@ -272,4 +272,3 @@ data.csv
 <https://jekyllrb-ko.github.io/>
 
 <https://www.gatsbyjs.org/>
-
