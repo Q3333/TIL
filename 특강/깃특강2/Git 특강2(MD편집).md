@@ -258,3 +258,18 @@ data.csv
 *.txt
 
 같이 들어있으면 해당 이름들의 파일은 깃에 올라가지 않음.
+
+
+
+
+
+유용한 사이트(웹디자인)
+
+<https://startbootstrap.com/>
+
+<https://fontawesome.com/>
+
+<https://jekyllrb-ko.github.io/>
+
+<https://www.gatsbyjs.org/>
+
