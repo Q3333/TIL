@@ -2,6 +2,10 @@
 
 
 
+#### @장고의 views에서 templates로 데이터를 넘길때는 context를 `딕셔너리` 로 만들어서 보내줘야한다!
+
+
+
 ## Index
 
 ![image-20191111165602600](README.assets/image-20191111165602600.png)
