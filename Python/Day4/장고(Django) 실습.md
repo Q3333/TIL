@@ -299,3 +299,28 @@ age.html(템플릿)
 
 
 연습1 : 숫자를 받아서 페이지 n 제곱 값을 나타내 보자.
+
+
+
+
+
+문자(직업,주소) 랜덤으로 주는 패키지 : Faker
+
+이미지 랜덤으로 주는 사이트 : Lorem Picsum
+
+
+
+
+
+## templates dtl사용
+
+
+
+```python
+{% for f in foods %} 
+{% endfor %}
+```
+
+
+
+for문은 항상 열고 닫아줘야한다.
