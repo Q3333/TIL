@@ -76,9 +76,9 @@ AUTH_PASSWORD_VALIDATORS = 비밀번호 검증을 위한 부분
 
 
 
-LANGUAGE_CODE = ko-kr
+#### LANGUAGE_CODE = ko-kr
 
-TIME_ZONE = Asia/Seoul
+#### TIME_ZONE = Asia/Seoul
 
 로 바꿔줘야함.
 
@@ -98,7 +98,7 @@ manage파일이 오류가 뜨면 파이썬 64비트가아니라 32비트일경�
 
 
 
-## 앱 실행
+## 앱 만들기
 
 ```python
 python manage.py startapp 앱이름
@@ -122,6 +122,12 @@ def index():
 ```
 
 flask의 이 부분이 views에서 다뤄진다.
+
+
+
+#### INSTALLED_APPS = [ 'pages',
+
+을 추가해줘야함. setting에
 
 
 

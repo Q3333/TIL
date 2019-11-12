@@ -1,0 +1,13 @@
+{% extends 'base.html'%} 
+
+{% block title %} 
+서브웨이 주문 결과
+{% endblock %}
+
+
+{% block body %}
+<h1>{{ name }}님이 {{ date }}에 주문하신 결과는</h1>
+<h3><{{ radio }}> 샌드위치 / <{{ size }}> 사이즈로</h3>
+<h3>빵의 종류는 <{{ bread }}></h3>
+<h3>야채, 소스의 추가 사항은 <{{ checkbox }}> 입니다.</h3>
+{% endblock %}
