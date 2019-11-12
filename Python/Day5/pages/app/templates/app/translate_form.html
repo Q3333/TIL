@@ -1,0 +1,7 @@
+{% extends 'base.html'%} {% block body %}
+<form action="/app/translate_result/" method="GET">
+  <label for="text">일본어로 통역할 텍스트를 입력해주세요</label><br>
+  <input type="text" name="text" id="text" />
+  <input type="submit" value="제출" />
+</form>
+{% endblock %}

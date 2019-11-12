@@ -10,4 +10,6 @@ urlpatterns =[
     path('subway_order/', views.subway_order),
     path('subway_result/', views.subway_result),
     path('static_example/', views.static_example),
+    path('translate_form/', views.translate_form),
+    path('translate_result/', views.translate_result),
 ]

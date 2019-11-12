@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import random
 import requests
+from decouple import config #.env 파일에 저장된 token을 받아오는 패키지
 
 # Create your views here.
 
@@ -73,3 +74,36 @@ def static_example(request):
 
 def index(request):
     return render(request,'app/index.html')
+
+def translate_form(request):
+    return render(request, 'app/translate_form.html')
+
+def translate_result(request):
+    text = request.GET.get('text')
+    C_ID = config("C_ID")
+    C_SC = config("C_SC")
+    url = "https://openapi.naver.com/v1/language/translate"
+
+    headers ={
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-Naver-Client-Id": C_ID,
+        "X-Naver-Client-Secret": C_SC
+    }
+
+    data = {
+        "source" : "ko",
+        "target" : "ja",
+        "text" : text 
+    }
+
+    req = requests.post(url, headers=headers, data=data).json()
+
+    # pprint(req)
+
+    mg = req['message']['result']['translatedText']
+    # print(mg)
+    context ={
+        'text' : mg
+    }
+
+    return render(request,'app/translate_result.html', context)

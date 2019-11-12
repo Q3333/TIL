@@ -5,23 +5,17 @@
 static 실습
 {% endblock %}
 
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/stylesheets/style.css' %}" />
+{% endblock %}
 
 {% block body %}
 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'app/stylesheets/style.css' %}" />
-  </head>
-  <body>
+
     <h1>Staitc 파일 실습</h1>
-    <img src="{% static 'app/images/peng.jpg' %}" alt="펭수" />
-  </body>
-</html>
+    <img src="{% static 'app/images/peng.jpg' %}" alt="펭수" height="300"/>
+  
 
 {% endblock %}
