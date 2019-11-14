@@ -11,4 +11,16 @@ class Board(models.Model):
      #auto_now 는 생성이 아니라 수정될 때 마다 시간이 자동으로 등록
 
     def __str__(self):
-        return f"{self.id} : {self.title}"
+        # return f"{self.id} : {self.title}"
+        return f"{self.title}"
+
+class Subway(models.Model):
+    name = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    menu = models.TextField()
+    size = models.TextField()
+    bread = models.TextField()
+    source = models.TextField()
+
+    def __str__(self):
+        return f" id : {self.id} {self.name}님이 주문하신 메뉴는 {self.menu}이며, size는 {self.size}, 빵은 {self.bread}, 추가 토핑은 {self.source}입니다. "

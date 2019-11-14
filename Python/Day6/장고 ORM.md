@@ -395,3 +395,295 @@ python manage.py shell
 
 
 
+
+
+##### 필드 관련 메뉴얼은 여기 참고
+
+ https://docs.djangoproject.com/en/2.2/ref/models/fields/ 
+
+
+
+### 인스턴스 체크
+
+**대상이름.full_clean()** 하면 board2의 인스턴스들을 보여준다.
+
+제목 맥스 길이를 10으로 해놓고 11자를 넣을 경우 결과 :
+
+```bash
+>>> board2.full_clean()
+django.core.exceptions.ValidationError: {'title': ['이 값이 최대 10 개의 글자인지 확인하세요(입력
+값 11 자).'], 'content': ['이 필드는 빈 칸으로 둘 수 없습니다.']}
+```
+
+
+
+### bash의 결과 값을 다른 변수에 저장 가능
+
+``` bash
+>>> b = Board.objects.all()
+>>> b
+<QuerySet [<Board: 1 : first>, <Board: 2 : second>, <Board: 3 : third>, <Board: 4 : forth>]>
+>>> b[0]
+<Board: 1 : first>
+>>> b[0].title
+'first'
+```
+
+
+
+PK를 이용해서 value를 가져올 수 있음.
+
+```bash
+>>> b = Board.objects.get(pk=3) 
+>>> b
+<Board: 3 : third>
+```
+
+
+
+요소로도 가져올 수 있음
+
+```bash
+>>> b = Board.objects.get(title='second')
+>>> b
+<Board: 2 : second>
+```
+
+
+
+##### get은 하나만 가져올 수 있다. (데이터가 없을 경우 에러가 발생)
+
+### 리스트에서 여러가지 값을 가져오는 방법 
+
+```bash
+>>> b = Board.objects.filter(title="second")
+>>> b
+<QuerySet [<Board: 2 : second>, <Board: 5 : second>, <Board: 6 : second>]>
+```
+
+#### filter를 사용함.
+
+
+
+#### *ORM의 리스트(쿼리셋)는 일반 리스트와 동일해서 슬라이싱도 가능
+
+```bash
+>>> b = Board.objects.all()
+>>> b
+<QuerySet [<Board: 1 : first>, <Board: 2 : second>, <Board: 3 : third>, <Board: 4 : forth>, <Board: 5 : second>, <Board: 6 : second>]>
+>>> b[1:3]
+<QuerySet [<Board: 2 : second>, <Board: 3 : third>]>
+```
+
+
+
+참고
+
+```bash
+>>> type(b)
+<class 'django.db.models.query.QuerySet'>
+>>> type(b[0])
+<class 'app.models.Board'>
+```
+
+Board.objects.all() 는 쿼리셋 타입,
+
+리스트의 요소 하나 하나는 객체(class 선언한 거) 의 타입이 된다.
+
+
+
+### like문(contains)
+
+```bash
+>>> b = Board.objects.filter(title__contains="sec")
+>>> b
+<QuerySet [<Board: 2 : second>, <Board: 5 : second>, <Board: 6 : second>]>
+```
+
+title에 sec가 포함된 객체들만 가져옴,
+
+#### title 뒤에 __을 붙여줘야함!!(ex title -> title\____)
+
+
+
+
+
+
+
+### Filter의 리턴값
+
+filter는 결과값이 하나여도 쿼리셋으로 리턴해주기 때문에
+
+b.title 이 아니라
+
+b[0].title 같은 식으로 호출해야한다.
+
+```bash
+>>> b = Board.objects.filter(title__startswith="fi")
+>>> b
+<QuerySet [<Board: 1 : first>]>
+>>> type(b)
+<class 'django.db.models.query.QuerySet'>
+
+
+>>> b.title
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'title'
+>>> b.[0].title
+  File "<console>", line 1
+    b.[0].title
+      ^
+SyntaxError: invalid syntax
+
+
+>>> b[0].title  
+'first'
+```
+
+
+
+#### startswith 가 아니라 endswith도 있음
+
+```bash
+>>> b = Board.objects.filter(title__endswith="d")
+>>> b
+<QuerySet [<Board: 2 : second>, <Board: 3 : third>, <Board: 5 : second>, <Board: 6 : second>]>
+```
+
+
+
+
+
+#### filter가 아니라 get일경우 바로 .title로 접근 가능
+
+```bash
+ b = Board.objects.get(pk=1) 
+>>> type(b)
+<class 'app.models.Board'>
+>>> b.title
+'first'
+>>> b.title = "hello orm"
+>>> b
+<Board: 1 : hello orm>
+>>> b.save()
+```
+
+하지만 save를 하지 않으면 데이터베이스에는 저장이 되지 않는다.
+
+
+
+#### 큰 틀은 쿼리셋 , 그 내부는 객체로 생성된다.
+
+
+
+## 요소 지우기
+
+요소.delete()
+
+```bash
+>>> b = Board.objects.get(pk=3)
+>>> b
+<Board: 3 : third>
+>>> b.delete()
+(1, {'app.Board': 1})
+>>> Board.objects.all()
+<QuerySet [<Board: 1 : hello orm>, <Board: 2 : second>, <Board: 4 : forth>, <Board: 5 : second>, <Board: 6 : second>]>
+```
+
+
+
+3이 사라짐.
+
+
+
+
+
+## admin 계정 만들기
+
+#### 명령어 : python manage.py createsuperuser
+
+```bash
+$ python manage.py createsuperuser
+사용자 이름 (leave blank to use 'student'): 
+```
+
+
+
+비번 a12341234
+
+
+
+![image-20191114143302616](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191114143302616.png)
+
+
+
+이런식으로 관리 창에 접근할 수 있음.
+
+
+
+### admin.py 수정하기
+
+```bash
+from django.contrib import admin
+from .models import Board
+
+# Register your models here.
+
+admin.site.register(Board)
+
+```
+
+import Board(모델이름), 및 register(Board) 를 해야함.
+
+
+
+
+
+수정하면 사이트에 APP 창이 하나 추가됨
+
+![image-20191114144405052](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191114144405052.png)
+
+
+
+
+
+## admin 디자인
+
+
+
+```bash
+from django.contrib import admin
+from .models import Board
+
+# Register your models here.
+
+class BoardAdmin(admin.ModelAdmin):
+    fields = ['content', 'title']
+    #내용 순서를 콘텐츠 - 타이틀로
+    list_display = ["title", "updated_at"]
+    #리스트에서 보여주는 값들을 제목 + 업데이트된 날짜로
+    list_filter = ["updated_at"]
+    #시간 별 필터(일주일,한달 등)
+    search_fields = ["title", "content"]
+    #검색창
+
+admin.site.register(Board , BoardAdmin)
+
+```
+
+
+
+BoardAdmin 클래스를 따로 하나 만들어주고 거기에서 편집,
+
+그 후 register에서 Board, 말고 BoardAdmin도 같이 넣어줘야한다.
+
+
+
+그 외 참고는  https://docs.djangoproject.com/en/2.2/ref/contrib/admin/ 
+
+
+
+
+
+결과 : ![image-20191114152338718](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191114152338718.png)

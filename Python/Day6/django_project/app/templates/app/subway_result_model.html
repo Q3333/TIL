@@ -1,0 +1,12 @@
+{% extends 'base.html'%} 
+
+{% block title %} 
+서브웨이 주문 결과
+{% endblock %}
+
+
+{% block body %}
+{% for i in subway_list %}
+<h1>{{ i }} </h1> <br>
+{% endfor %}
+{% endblock %}
