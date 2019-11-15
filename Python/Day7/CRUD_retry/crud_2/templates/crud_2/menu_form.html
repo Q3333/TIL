@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3>메뉴 추가하기 탭</h3>
+<form action='/crud_2/menu_send/' method='POST'>
+        {% csrf_token %}
+        <label for="menu">메뉴 이름</label>     
+        <input type="text" name="menu" id="menu"><br>
+        <label for="price">가격</label>
+        <input type="number" name="price" id="price"><br>
+        <label for="content">설명</label><br>
+        <textarea name="content" cols="30" rows="5"></textarea><br>
+        <input type='submit'>
+    </form>
+{% endblock %}

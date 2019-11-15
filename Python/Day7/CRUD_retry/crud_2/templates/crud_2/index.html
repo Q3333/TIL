@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>인덱스임</h1>
+
+{% for menu in menu_list %}
+<a href="/crud_2/{{menu.id}}/detail">
+주문 번호 : {{menu.id}} </a><br>
+메뉴 이름 : {{menu.name}}
+가격 : {{menu.price}}
+
+<br>
+{% endfor %}
+
+{% endblock %}

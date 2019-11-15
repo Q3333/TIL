@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+
+  <h5>메뉴 이름 :
+    {{menu_detail.name}} </h5> <br>
+   <h5>가격 :
+    {{menu_detail.price}} </h5> <br>
+   <h5>설명 :
+    {{menu_detail.content}} </h5> <br>
+    
+    <a href="/crud_2/{{menu_detail.id}}/update">수정하기</a> 
+    <a href="/crud_2/{{menu_detail.id}}/delete">삭제하기</a>
+</form>
+{% endblock %}

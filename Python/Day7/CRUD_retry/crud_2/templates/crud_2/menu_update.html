@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action='/crud_2/{{menu_detail.id}}/update_complete/' method='POST'>
+    {% csrf_token %}
+    <label for="menu">메뉴 이름</label>     
+    <input type="text" name="menu" id="menu" value="{{menu_detail.name}}"><br>
+    <label for="price">가격</label>
+    <input type="number" name="price" id="price" value="{{menu_detail.price}}"><br>
+    <label for="content">설명</label><br>
+    <textarea name="content" cols="30" rows="5">{{menu_detail.content}}</textarea><br>
+    <input type="submit" value="수정완료">
+
+</form>
+{% endblock %}
