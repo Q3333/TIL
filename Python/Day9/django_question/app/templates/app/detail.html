@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+DETAIL PAGE
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>{{q.question}}</h1>
+<form action='{% url "app:delete" q.id %}' method='POST'>
+        {% csrf_token %}
+        <input type='submit' value="삭제하기">
+    </form>    
+<br>
+{% for c in choices %}
+<p>{{c.id}}. {{c.survey}} <a href="{% url 'app:choice_edit' q.id c.id %}">댓글 수정</a></p> 
+
+<br>
+{% empty %}
+<h2>등록된 댓글이 없어요~</h2>
+{% endfor %}
+<form action='{% url "app:survey" q.id %}' method='POST'>
+    {% csrf_token %}
+    <input type="text" name ="q_text">
+    <input type='submit' value="항목 추가">
+</form>
+{% endblock %}

@@ -125,7 +125,7 @@ flask의 이 부분이 views에서 다뤄진다.
 
 
 
-#### INSTALLED_APPS = [ 'pages',
+#### INSTALLED_APPS = [ '앱이름(pages)',
 
 을 추가해줘야함. setting에
 

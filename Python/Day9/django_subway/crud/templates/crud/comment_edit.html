@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+    <form action='' method='POST'>
+        <!-- 액션 값에 아무것도 안 주면 그냥 그 페이지 유지가 됨.-->
+        {% csrf_token %}
+        댓글 : <input type="text" name="comment" value="{{ comment.comment }}">
+        <input type='submit' value="댓글 수정">
+    </form>
+{% endblock %}
