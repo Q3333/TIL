@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5oz%nn53f=65np-eh(lx^q@2atcrp3wy^4dltxcz!sw$yp+in_'
+SECRET_KEY = '&@+adc5)w8$p@)mgru09#ed0$vl^_&0p*$kfoq3l@#k1=@(4sj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions', # shell_plus 사용하기 위해 등록
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'config','templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'config', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

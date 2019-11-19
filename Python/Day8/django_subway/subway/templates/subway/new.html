@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block body %}
-    <form action='{% url "subway:edit" subway.id %}' method='POST'>
+    <form action='{% url "subway:new" %}' method='POST'>
         {% csrf_token %}
         <div>
-            이름: <input type="text" name="name" value="{{ subway.name }}">
+            이름: <input type="text" name="name">
         </div>
         <hr>
         <div>
-            주소: <input type="text" name="address" value="{{ subway.address }}">
+            주소: <input type="text" name="address">
         </div>
         <hr>
         <div>
-            번호: <input type="tel" name="phone" value="{{ subway.phone }}">
+            번호: <input type="tel" name="phone">
         </div>
         <hr>
         <div>
