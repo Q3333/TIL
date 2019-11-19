@@ -38,7 +38,7 @@ def delete(request, q_id):
 
 
 def choice_edit(request,q_id,c_id):
-
+    q = Question.objects.get(id=q_id)
     cho = Choice.objects.get(id=c_id)
 
     if request.method == "POST":
@@ -51,11 +51,16 @@ def choice_edit(request,q_id,c_id):
 
     else :
         context = {
-            'choice' : cho
+            'choice' : cho,
+            'q': q
         }
         return render(request,"app/choice_edit.html", context)
      
-    
+
+def choice_del(request, q_id, c_id):
+    c = Choice.objects.get(id=c_id)
+    c.delete()
+    return redirect('app:detail', q_id)
 
 def survey(request,q_id):
     q_text = request.POST.get('q_text')
@@ -66,3 +71,10 @@ def survey(request,q_id):
     c.save()
     return redirect('app:detail', q_id)
     
+def choice_vote(request,q_id,c_id):
+    c = Choice.objects.get(id=c_id)
+    
+    print(f'vote method is {request.method}')
+    c.votes = c.votes+1
+    c.save()
+    return redirect('app:detail', q_id)

@@ -11,4 +11,8 @@ UPDATE PAGE
         <br>
         <input type='submit' value="의견 등록">
     </form>
+    <form action='{% url "app:choice_del" q.id choice.id %}' method='POST'>
+            {% csrf_token %}<br>
+            <input type='submit' value="의견 삭제">
+        </form>
 {% endblock %}
