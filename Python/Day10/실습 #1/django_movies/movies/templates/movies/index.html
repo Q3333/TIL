@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+인덱스 페이지
+{% endblock %}
+{% block body %}
+{% for movie in m %}
+    <h3>{{movie.title}} {{movie.score}}</h3><br>
+    <img src="{{movie.poster_url}}" alt="{{movie.title}}" width="300" height="300">
+    <hr>
+{% endfor %}
+{% endblock %}

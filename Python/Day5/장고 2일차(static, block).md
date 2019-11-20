@@ -118,12 +118,12 @@ images, stylesheets 폴더로 구분
 
 ```python
 from django.contrib import admin
-from django.urls import path, include
+    from django.urls import path, include
 
 
-urlpatterns = [
-    path('app/', include('app.urls')),
-    path('admin/', admin.site.urls),
+    urlpatterns = [
+        path('app/', include('app.urls')),
+   	    path('admin/', admin.site.urls),
 ]
 ```
 
@@ -189,6 +189,12 @@ ex) 이 경우에는 app의 index는 실행 안되고 util의 index만 실행이
 #### Config에 templates 폴더를 만든 뒤
 
 ![image-20191112160548640](장고 2일차.assets/image-20191112160548640.png)
+
+
+
+```python
+[os.path.join(BASE_DIR, "config","templates")],
+```
 
 
 

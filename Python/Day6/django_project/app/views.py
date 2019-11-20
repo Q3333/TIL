@@ -17,6 +17,9 @@ def subway_result(request):
    bread = request.POST.get('bread')
    checkboxlist = request.POST.getlist('checkbox')
 
+   print(type(date))
+   print(date)
+
    checkbox_string = ", ".join(checkboxlist)
 
    Subway.objects.create(name=name, menu=radio, size=size, bread=bread, source=checkbox_string) 
