@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+<h1>인덱스 페이지</h1>
+
+
+<!-- <img src="{% static 'boards/images/rrr.jpg' %}" alt="renec" width="500" height="300">
+
+<img src="{% static 'garen.jpg' %}" alt="garen" width="500" height="300"> -->
+
+<!-- <hr>
+<br>
+<hr> -->
+
+{% for board in boards %}
+    <!-- {{board.title}}
+    {{board.content}}<br>
+    <hr>
+    <img src="{%{board.image.url}}" alt="{%{board.image}}" width="500" height="300">
+    <br> -->
+
+    <li><a href="{% url 'boards:detail' board.id %}">{{board.title}}</a></li>
+     <hr>
+{% endfor %}
+
+<hr>
+<br>
+
+
+<a href="{% url 'boards:new' %}">새로 만들기 </a>
+
+{% endblock %}

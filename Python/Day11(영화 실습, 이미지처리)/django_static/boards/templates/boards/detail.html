@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+<h2>Detail Page</h2>
+
+<div>
+TITLE : {{board.title}} <br>
+
+content : {{board.content}} <br>
+
+IMAGE : <br>
+{% if board.image %}
+원본 이미지 : <br>
+<img src="{{board.image.url}}" alt="{{board.image}}" width="800" height="500">
+<!-- <img src="{{board.image.url}}" alt="{{board.image}}"> -->
+<hr>
+썸네일 이미지 : <br><br>
+<img src="{{board.image_thumb.url}}" alt="{{board.image}}">
+
+{% else %}
+<img src="{% static 'basic.jpg' %}" alt="garen" width="500" height="300"> -->
+
+{% endif %}
+</div>
+
+<a href="{% url 'boards:edit' board.id %}">수정하기</a>
+
+{% endblock %}
